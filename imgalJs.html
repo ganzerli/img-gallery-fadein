@@ -18,11 +18,19 @@
 		display:flex;
 		align-content: center;
 		justify-content: center;
+		margin-bottom:2rem;
+		border-radius: .5em;
+		box-shadow: 0 0 10px 5px rgba(0,0,0,.4)
+	}
+
+	main{
+		background-color:#999;
+		padding:2rem;
+		box-shadow: 0 0 10px 5px rgba(55,55,55,.4);
+		border-radius: 3px;
 
 	}
-	main{
-		background-color:#333;
-	}
+	
 
 	.main-img img{
 		position:absolute;
@@ -37,7 +45,7 @@
 	}
 	section.imgs{
 		position:relative;
-		width:80%;
+		width:70%;
 		margin:0 auto;
 		display:flex;
 		flex:25%;
@@ -52,6 +60,8 @@
 		max-width:15rem;
 		max-height:10em;
 		margin:.5em;
+		box-shadow: 0 0 10px 5px rgba(55,55,55,.4);
+		border-radius: 3px;
 	}
 	/*fade in animation*/
 	@keyframes fadeIn{
@@ -96,10 +106,10 @@
 		// click on element take the .src of the clicked eventlistener element and put it where -- current -- id is..
 		function imgClick(e){
 			current.classList.remove('fade-in');
-			imgs.forEach(img => img.style.opacity = 1);
-			e.target.style.opacity = opacity;
+			imgs.forEach(img => img.style.opacity = 1); //reset back the opacit.y
+			e.target.style.opacity = opacity; // clicked picture becomes 0.4
 			
-			current.src = e.target.src;
+			current.src = e.target.src;    //// GETTING SRC ATTRIBUTE AND PUTTING INT HE ONE ON THE BIG IMAGE!!
 
 			//fade-in classfor the selected
 			current.classList.add('fade-in');
