@@ -14,27 +14,40 @@
 		max-width:60em;
 		height:40em;
 		margin:auto;
-		overflow: hidden;
 		display:flex;
 		align-content: center;
 		justify-content: center;
 		margin-bottom:2rem;
-		border-radius: .5em;
-		box-shadow: 0 0 10px 5px rgba(0,0,0,.4)
+	}
+
+	.main-img::before{
+		content:"";
+		position:absolute;
+		width:100%;
+		height:100%;
+		background:rgba(0,0,0,.5);
+		opacity: .5;
+		transform:scale(0);
+		filter:blur(10px);
+		animation: appear 2s ease-out 1s forwards;
 	}
 
 	main{
-		background-color:#999;
+		background-color:#eee;
 		padding:2rem;
-		box-shadow: 0 0 10px 5px rgba(55,55,55,.4);
+		box-shadow: 0 0 10px 5px rgba(55,55,55,.1);
 		border-radius: 3px;
-
+		transform:scale(1.03);
+		animation: welcome 2s ease-in .5s forwards;
 	}
 	
 
 	.main-img img{
 		position:absolute;
 		align-self: center;
+		transform:scale(.9);
+		animation: welcome 3s cubic-bezier(0,1.01,1,1) 1s forwards;
+
 	}
 	.main-img img,
 	.imgs img{ 
@@ -63,17 +76,28 @@
 		box-shadow: 0 0 10px 5px rgba(55,55,55,.4);
 		border-radius: 3px;
 	}
+	.fade-in{
+		opacity:0;
+		animation:fadeIn 0.5s ease-in 1 forwards;
+	}
 	/*fade in animation*/
 	@keyframes fadeIn{
 		to{
 			opacity:1;
 		}
 	}
-	.fade-in{
-		opacity:0;
-		animation:fadeIn 0.5s ease-in 1 forwards;
+	@keyframes appear{
+		to{
+			transform: scale(1.02);
+		};
+	}
+	@keyframes welcome{
+		to{
+			transform: scale(1);
+		};
 	}
 	
+
 </style>
 </head>
 <body>
